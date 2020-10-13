@@ -56,7 +56,7 @@ new_folder = "C:\\Users\\sopsla\\Desktop\\session2a-image\\tmp"
 os.mkdir(new_folder)
 
 # save the file
-img.save(os.path.join(new_folder, filename, extension), extension)
+img.save(os.path.join(new_folder, "copy.jpg"))
 
 # this demonstrates that everything you do to the image in Python, is done to the data loaded onto the variable
 # in Python. Only when you save it, it will become part of the actual file.
