@@ -14,12 +14,16 @@ print(img.tile)
 
 # cropping an image
 # coordinates: (left upper / right lower)
-reg = (0, 100, 100, 200)  # random square, in pixels
+reg = (0, 100, 200, 300)  # random square, in pixels
 img_crop = img.crop(reg)
 img_crop.show()
 
 # now you can save this if you want
 img_crop.save(os.path.join(img_folder, "test.png"))
+
+# we could also flip it and paste it back
+img_crop = img_crop.transpose(Image.ROTATE_180)
+img.paste(img_crop, reg) # this directly edits the img variable!
 
 # what if you wanted to crop the image such that it is the largest square it can be?
 width = img.width
