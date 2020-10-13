@@ -33,10 +33,14 @@ height = img.height
 distance_from_center = min([width, height])/2
 center = (width/2, height/2)
 
-(left1, left2) = (number - distance_from_center for number in center)
-(right1, right2) = (number + distance_from_center for number in center)
+left = []
+right = []
 
-img_square = img.crop((left1, left2, right1, right2))
+for number in center:
+    left.append(number - distance_from_center)
+    right.append(number + distance_from_center)
+
+img_square = img.crop((left[0], left[1], right[0], right[1]))
 img_square.show()
 
 # now this is a copy from a part of the image.
